@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+// @use 'variables.scss' as v;
+
+// Font families
+$font-ibm: "ibm plex serif", sans-serif;
+$font-open-sans: "open sans", sans-serif;
+
+// Font size
+$heading: 20px;
+$paragraph: 14px;
+
+// Font weight
+$bold: 700;
+$semi-bold: 600;
+$regular: 400; 
+
+// Maybe not sure if this file was were it was supposed to be moved to
+/*@mixin heading($color-value) {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: $color-value;
+}
+
+@mixin heading-black {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: v.$neutral-tint-100;
+}
+
+@mixin paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$regular;
+	color: v.$neutral-tint-100;
+}
+
+@mixin semibold-paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$semi-bold;
+	color: v.$neutral-tint-100;
+}
+
+// Shadow mixins
+@mixin light-dropshadow {
+	color: v.$grey-medium-color;
+	opacity: v.$light-shadow-opacity;
+}
+
+@mixin dark-dropshadow {
+	color: v.$grey-dark-color;
+	opacity: v.$dark-shadow-opacity;
+}
+*/

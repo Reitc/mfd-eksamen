@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/*@mixin heading($color-value) {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: $color-value;
+}
+
+@mixin heading-black {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: v.$neutral-tint-100;
+}
+
+@mixin paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$regular;
+	color: v.$neutral-tint-100;
+}
+
+@mixin semibold-paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$semi-bold;
+	color: v.$neutral-tint-100;
+}
+
+// Shadow mixins
+@mixin light-dropshadow {
+	color: v.$grey-medium-color;
+	opacity: v.$light-shadow-opacity;
+}
+
+@mixin dark-dropshadow {
+	color: v.$grey-dark-color;
+	opacity: v.$dark-shadow-opacity;
+}
+*/
+.CarouselCard {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1803921569);
+  margin: 2em 0;
+}
+.CarouselCard img {
+  width: 210px;
+  height: 240px;
+}
+.CarouselCard p {
+  font-family: "open sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  margin: 0.5em 0;
+}
+.CarouselCard button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #f3a25a;
+  transform: translateY(45%);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1803921569);
+  position: relative;
+}
+.CarouselCard button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 25px solid white;
+  background-size: contain;
+}/*# sourceMappingURL=carouselCard.module.css.map */

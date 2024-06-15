@@ -1,0 +1,25 @@
+@use '../buttons' as b;
+
+.playButtonOffCenter {
+	@include b.play-button;
+}
+
+.playButtonCenter {
+	@include b.play-button-center;
+}
+
+.pauseButtonCenter {
+	@include b.pause-button-center;
+}
+
+.audioInteractButton {
+	@include b.audio-interact-button;
+}
+
+.interactButton {
+	@include b.interact-button;
+}
+
+.primaryButton {
+	@include b.primary-button;
+}

@@ -1,0 +1,30 @@
+@use '../../mixins/typography-mixins.scss' as t;
+@use '../../base/variables.scss' as v;
+@use '../modules/buttons' as b;
+.CarouselCard {
+	flex: 0 0 auto;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+
+	box-shadow: v.$drop-shadow;
+	margin: 2em 0;
+
+	img {
+		width: 210px;
+		height: 240px;
+	}
+	p {
+		@include t.paragraph;
+		margin: 0.5em 0;
+	}
+
+	button {
+		@include b.play-button;
+	}
+}

@@ -1,0 +1,47 @@
+@use '../base/typography.scss' as t;
+@use '../base/variables.scss' as v;
+
+// Text mixins
+@mixin heading($color-value) {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: $color-value;
+}
+
+@mixin heading-black {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: v.$neutral-tint-100;
+}
+
+@mixin paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$regular;
+	color: v.$neutral-tint-100;
+}
+
+@mixin semibold-paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$semi-bold;
+	color: v.$neutral-tint-100;
+}
+//
+//
+//
+//
+//TODO skal flyttes til korrekt fil
+
+// Shadow mixins
+@mixin light-dropshadow {
+	color: v.$grey-medium-color;
+	opacity: v.$light-shadow-opacity;
+}
+
+@mixin dark-dropshadow {
+	color: v.$grey-dark-color;
+	opacity: v.$dark-shadow-opacity;
+}

@@ -1,0 +1,24 @@
+@use '../../../base/variables.scss' as v;
+@use '../../../mixins/typography-mixins.scss' as t;
+
+.inputContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 0.5em;
+	margin: 1em 0;
+	width: 100%;
+
+	label {
+		@include t.semibold-paragraph;
+	}
+	input,
+	textarea,
+	select {
+		padding: 0.5em;
+		border-width: 0.5px;
+		border-radius: 6px;
+		width: 100%;
+	}
+}

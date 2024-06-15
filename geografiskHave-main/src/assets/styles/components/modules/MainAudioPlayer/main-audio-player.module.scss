@@ -1,0 +1,61 @@
+@use '../../../base/variables.scss' as v;
+@use '../../../mixins/typography-mixins.scss' as t;
+@use '../buttons' as b;
+
+.audioWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.timeIndicator {
+	position: relative;
+	width: 90%;
+	height: 8px;
+	background: v.$grey-light-color;
+	border-radius: 5px;
+}
+
+.numIndicator {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	padding: 0.7em 0;
+}
+
+.audioControlButtons {
+	@include b.audio-interact-button;
+}
+
+.timeIndicatorFill {
+	position: relative;
+}
+
+.timeIndicatorFill::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 15px;
+	height: 15px;
+	background: v.$neutral-tint-10;
+	border-radius: 50%;
+	border: v.$grey-medium-color;
+	box-shadow: v.$drop-shadow;
+}
+
+.modal {
+	position: absolute;
+	background: #000000b4;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 1em;
+	border-radius: 8px;
+	z-index: 10004;
+}

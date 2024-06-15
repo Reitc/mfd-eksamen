@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/*@mixin heading($color-value) {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: $color-value;
+}
+
+@mixin heading-black {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: v.$neutral-tint-100;
+}
+
+@mixin paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$regular;
+	color: v.$neutral-tint-100;
+}
+
+@mixin semibold-paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$semi-bold;
+	color: v.$neutral-tint-100;
+}
+
+// Shadow mixins
+@mixin light-dropshadow {
+	color: v.$grey-medium-color;
+	opacity: v.$light-shadow-opacity;
+}
+
+@mixin dark-dropshadow {
+	color: v.$grey-dark-color;
+	opacity: v.$dark-shadow-opacity;
+}
+*/
+.Carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  overflow: auto;
+}
+.Carousel .CarouselContainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x none;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  gap: 1.3em;
+  width: 100%;
+  padding: 0 4em;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+}
+.Carousel .CarouselContainer ::-webkit-scrollbar {
+  display: none;
+}
+
+.DotNavigation {
+  display: flex;
+  margin-top: 50px;
+  align-self: center;
+}
+
+.Dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fee174;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.Active {
+  background-color: #f3a25a;
+}/*# sourceMappingURL=carousel.module.css.map */

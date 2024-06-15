@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/*@mixin heading($color-value) {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: $color-value;
+}
+
+@mixin heading-black {
+	font-family: t.$font-ibm;
+	font-size: t.$heading;
+	font-weight: t.$bold;
+	color: v.$neutral-tint-100;
+}
+
+@mixin paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$regular;
+	color: v.$neutral-tint-100;
+}
+
+@mixin semibold-paragraph {
+	font-family: t.$font-open-sans;
+	font-size: t.$paragraph;
+	font-weight: t.$semi-bold;
+	color: v.$neutral-tint-100;
+}
+
+// Shadow mixins
+@mixin light-dropshadow {
+	color: v.$grey-medium-color;
+	opacity: v.$light-shadow-opacity;
+}
+
+@mixin dark-dropshadow {
+	color: v.$grey-dark-color;
+	opacity: v.$dark-shadow-opacity;
+}
+*/
+.playerComponent {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1em;
+  padding: 1em 2em;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1803921569);
+  overflow: auto;
+  width: 90vw;
+}
+.playerComponent span {
+  font-family: "open sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  flex-grow: 1;
+}/*# sourceMappingURL=single-media-player.module.css.map */

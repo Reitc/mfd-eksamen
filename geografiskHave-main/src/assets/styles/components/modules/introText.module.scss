@@ -1,0 +1,18 @@
+@use '../../mixins/typography-mixins.scss' as t;
+@use '../../base/variables.scss' as v;
+.IntroText {
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		@include t.heading(v.$neutral-tint-100);
+		text-align: center;
+		margin: 1em 0;
+	}
+
+	p {
+		@include t.paragraph;
+
+		margin: 1.5em;
+	}
+}

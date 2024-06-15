@@ -1,0 +1,48 @@
+@use '../../base/typography.scss' as *;
+@use '../../base/variables.scss' as v;
+
+.Carousel {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 5px;
+	overflow: auto;
+
+	.CarouselContainer {
+		display: flex;
+		flex-direction: row;
+		overflow-x: auto;
+		scroll-snap-type: x none;
+		-webkit-overflow-scrolling: touch;
+		scroll-behavior: smooth;
+		gap: 1.3em;
+		width: 100%;
+		padding: 0 4em;
+		scrollbar-width: none;
+		overflow: -moz-scrollbars-none;
+		::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}
+
+.DotNavigation {
+	display: flex;
+	margin-top: 50px;
+	align-self: center;
+}
+
+.Dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: v.$accent-color;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.Active {
+	background-color: v.$interactive-color;
+}

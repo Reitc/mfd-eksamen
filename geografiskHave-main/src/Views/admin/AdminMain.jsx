@@ -10,10 +10,14 @@ import Button from '@/Components/Button';
 import Style from '../../assets/styles/components/modules/admin.module.scss';
 
 function AdminMain() {
+	// State to hold the list of stories
 	const [stories, setStories] = useState([]);
+	// State to track the currently clicked story index
 	const [clickedIndex, setClickedIndex] = useState(-1);
+	// State to hold the ID of the selected story
 	const [storyId, setStoryId] = useState('');
 
+	// Fetch the list of stories from Firestore when the component mounts
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -31,11 +35,13 @@ function AdminMain() {
 		fetchData();
 	}, []);
 
+	// Handle image click to select or deselect a story
 	const handleImageClick = (index) => {
 		setClickedIndex(index === clickedIndex ? -1 : index);
 		setStoryId(stories[index]);
 	};
 
+	// Handle deletion of a story
 	const handleDelete = async (id) => {
 		try {
 			await deleteDoc(doc(db, 'stories', id));
@@ -63,6 +69,7 @@ function AdminMain() {
 				</Button>
 			</div>
 
+			{/* Map over the list of stories and display each one */}
 			{stories.map((story, index) => (
 				<div
 					className={index === clickedIndex ? Style.clickedDiv : Style.storyDiv}

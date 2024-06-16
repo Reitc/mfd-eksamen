@@ -16,51 +16,62 @@ import Layout from '@/Layout';
 import Auth from '@/Components/auth/Auth';
 import { useAuth } from '@/Context/AuthContext';
 
-//css
+// CSS
 import './App.css';
 
+// App component definition
 function App() {
+	// Get the current user from the authentication context
 	const { user } = useAuth();
 
 	return (
 		<main>
 			<BrowserRouter>
+				{/* Layout component wraps the entire application for consistent styling */}
 				<Layout>
+					{/* Navigation component */}
 					<Nav />
+					{/* Define the routes for the application */}
 					<Routes>
-						<Route
+						{/* MainView component for the root path */}
+						<Route 
 							path='/'
-							element={<MainView />}
+							element={<MainView />} 
 						/>
-						<Route
-							path='map'
-							element={<MapView />}
+						{/* MapView component for the /map path */}
+						<Route 
+							path='map' 
+							element={<MapView />} 
 						/>
-
-						<Route
-							path='/map/:storyId'
-							element={<MapView />}
+						{/* MapView component for the /map/:storyId path */}
+						<Route 
+							path='/map/:storyId' 
+							element={<MapView />} 
 						/>
-
-						<Route
-							path='/'
+						{/* Conditionally render routes based on user authentication */}
+						<Route 
+							path='/' 
 							element={!user ? <Auth /> : <Admin />}>
-							<Route
-								path='/addstory'
-								element={<AddStory />}
+							{/* AddStory component for /addstory path */}
+							<Route 
+								path='/addstory' 
+								element={<AddStory />} 
 							/>
-							<Route
-								path='/updatestory/:id'
-								element={<UpdateStory />}
+							{/* UpdateStory component for /updatestory/:id path */}
+							<Route 
+								path='/updatestory/:id' 
+								element={<UpdateStory />} 
 							/>
-							<Route
-								path='/admin'
-								element={<AdminMain />}
+							{/* AdminMain component for /admin path */}
+							<Route 
+								path='/admin' 
+								element={<AdminMain />} 
 							/>
 						</Route>
 					</Routes>
 				</Layout>
 			</BrowserRouter>
+			{/* ToastContainer component for displaying toast notifications */}
 			<ToastContainer />
 		</main>
 	);

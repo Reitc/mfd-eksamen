@@ -12,8 +12,8 @@ function MapView({ Title }) {
 	const [userLocation, setUserLocation] = useState([0, 0]);
 	const [currentIndex, setCurrentIndex] = useState(0);
 
+	// Get user's current location
 	useEffect(() => {
-		// Fetch the user's current location
 		const watchId = navigator.geolocation.watchPosition(
 			(position) => {
 				setUserLocation([position.coords.latitude, position.coords.longitude]);
@@ -23,13 +23,14 @@ function MapView({ Title }) {
 			}
 		);
 
+		// Clear the geolocation watch on component unmount
 		return () => {
 			navigator.geolocation.clearWatch(watchId);
 		};
 	}, []);
 
+	// Fetch story details based on the story ID from URL
 	useEffect(() => {
-		// Fetch the story details from the database using the story ID
 		const fetchStoryDetails = async () => {
 			try {
 				const docRef = doc(db, 'stories', storyId);
@@ -59,8 +60,8 @@ function MapView({ Title }) {
 				{storyDetails &&
 					storyDetails.markerLocations &&
 					storyDetails.markerLocations.map((location, index) => (
-						<Marker
-							key={index}
+						<Marker 
+							key={index} 
 							position={location}>
 							<Popup>{storyDetails.markerText[index]}</Popup>
 						</Marker>

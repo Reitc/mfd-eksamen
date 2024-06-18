@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { db } from '../../config/firebase';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { useStories } from '../../Context/StoriesContext';
 
 // Components
 import Button from '@/Components/Button';
@@ -10,48 +11,12 @@ import Button from '@/Components/Button';
 import Style from '../../assets/styles/components/modules/admin.module.scss';
 
 function AdminMain() {
-    // State to hold the list of stories
-    const [stories, setStories] = useState([]);
+
+    const { stories, setStories, loading } = useStories();
     // State to track the currently clicked story index
     const [clickedIndex, setClickedIndex] = useState(-1);
     // State to hold the ID of the selected story
     const [storyId, setStoryId] = useState('');
-
-    // Fetch the list of stories from Firestore when the component mounts
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                // Check if stories data is in local storage
-                const cachedStories = localStorage.getItem('stories');
-                const cacheTimestamp = localStorage.getItem('storiesTimestamp');
-                const now = new Date().getTime();
-                const cacheExpiry = 60 * 60 * 1000; // 1 hour
-				console.log(cachedStories)
-
-                // If cache is valid, use cached stories
-                if (cachedStories && cacheTimestamp && now - cacheTimestamp < cacheExpiry) {
-                    setStories(JSON.parse(cachedStories));
-					console.log("Getting:" + JSON.parse(cachedStories) )
-                } else {
-                    // Fetch stories from Firestore if no valid cache is found
-                    const querySnapshot = await getDocs(collection(db, 'stories'));
-                    const fetchedStories = [];
-                    querySnapshot.forEach((doc) => {
-                        fetchedStories.push({ id: doc.id, ...doc.data() });
-					 console.log("getting from db")
-                    });
-                    setStories(fetchedStories);
-                    // Save fetched stories to local storage
-                    localStorage.setItem('stories', JSON.stringify(fetchedStories));
-                    localStorage.setItem('storiesTimestamp', now.toString());
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
 
     // Handle image click to select or deselect a story
     const handleImageClick = (index) => {

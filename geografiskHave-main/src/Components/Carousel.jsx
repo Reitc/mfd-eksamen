@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { db } from '../config/firebase';
 import { collection, query, getDocs, orderBy } from 'firebase/firestore';
+import { useStories } from '../Context/StoriesContext';
 
 // CSS modules
 import Style from '@/assets/styles/components/modules/carousel.module.scss';
@@ -9,41 +10,10 @@ import Style from '@/assets/styles/components/modules/carousel.module.scss';
 import CarouselCard from '../Components/CarouselCard';
 
 function Carousel() {
-	const [stories, setStories] = useState([]);
+	const { stories, loading } = useStories();
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const carouselRef = useRef();
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const storiesQuery = query(
-					collection(db, 'stories'),
-					orderBy('createdAt', 'desc')
-				);
-
-				const querySnapshot = await getDocs(storiesQuery);
-
-				const fetchedStories = querySnapshot.docs.map((doc) => {
-					const data = doc.data();
-					return {
-						id: doc.id,
-						title: data.title,
-						description: data.description,
-						image: data.image,
-						audio: data.audio,
-						markerText: data.markerText,
-						markerLocations: data.markerLocations,
-					};
-				});
-
-				setStories(fetchedStories);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			}
-		};
-
-		fetchData();
-	}, []);
 	useEffect(() => {
 		const handleScroll = () => {
 			const container = carouselRef.current;
